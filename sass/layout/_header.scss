@@ -1,0 +1,47 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9998;
+  transition: all 0.5s;
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    .logo {
+      a {
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  }
+  &.scrollUp {
+    transform: translateY(-15rem);
+  }
+  .navigation-bar {
+    background-color: $color-primary-dark;
+    background-image: url(./inc/img/header.svg);
+  }
+  .opening-bar {
+    font-family: $font-header;
+    font-size: 1.4rem;
+    background-color: rgba($color: $color-primary, $alpha: 0.65);
+    color: $color-white;
+    padding: 1rem 0;
+    display: none;
+    @media only screen and (min-width: $bp-large) {
+      display: grid;
+    }
+    a {
+      color: $color-white;
+    }
+    span {
+      font-style: italic;
+      padding-right: 2rem;
+    }
+    &--wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
