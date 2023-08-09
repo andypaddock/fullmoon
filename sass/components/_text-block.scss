@@ -24,6 +24,21 @@
       h2 {
         padding-bottom: 3rem;
       }
+      p {
+        font-size: 1.6rem;
+        &:first-of-type {
+          font-size: 1.8rem;
+          font-style: italic;
+        }
+      }
+      h5 {
+        font-size: 1.4rem;
+        color: $color-primary;
+        font-family: $font-header;
+        font-style: italic;
+        padding: 2rem 0 0;
+        font-weight: 100;
+      }
     }
     &__one {
       padding: 5rem 0;
