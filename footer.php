@@ -12,7 +12,7 @@
 ?>
 <?php $pageElements = get_field('page_element_headings', 'options'); ?>
 <footer id="colophon" class="container">
-    <div class="row col-8 footer-accordian">
+    <div class="row col-12 footer-accordian">
         <div class="footer-accordian--links">
             <div class="footer-accordian--heading">
                 <h3 class="heading-4 footer-accordian--title"><?php echo $pageElements['footer_links_title']; ?></h3><i
@@ -52,11 +52,12 @@
             </div>
             <div class="footer-accordian--content">
                 <div class="contacts-wrapper">
-                    <div class="address">
+                    <!-- <div class="address">
                         <?php the_field('address', 'options'); ?>
-                    </div>
-                    <div class="email"><?php
-                                $link = get_field('email', 'options');
+                    </div> -->
+
+                    <div class="phone"><?php
+                                $link = get_field('phone_number', 'options');
                                 if ($link) :
                                     $link_url = $link['url'];
                                     $link_title = $link['title'];
@@ -66,8 +67,9 @@
                             target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
                         <?php endif; ?>
                     </div>
-                    <div class="phone"><?php
-                                $link = get_field('phone_number', 'options');
+                    <div class="spacer-bar">|</div>
+                    <div class="email"><?php
+                                $link = get_field('email', 'options');
                                 if ($link) :
                                     $link_url = $link['url'];
                                     $link_title = $link['title'];

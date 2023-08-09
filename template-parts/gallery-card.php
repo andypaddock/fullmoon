@@ -19,7 +19,7 @@ if ($images) : ?>
                 <?php endforeach; ?>
             </div>
             <?php endif; ?>
-            <div class="gallery-card--text">
+            <div class="gallery-card--text fmright">
                 <h2 class="heading-2 heading-2--primary"><?php the_sub_field('box_title'); ?></h2>
                 <?php the_sub_field('box_text'); ?>
 

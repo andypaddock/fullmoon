@@ -136,6 +136,24 @@ jQuery(document).ready(function ($) {
   $(".gallery-wrapper").slick({
     arrows: false,
     slidesToShow: 1.1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+          dots: true,
+        },
+      },
+    ],
   });
 
   $(document).ready(function () {

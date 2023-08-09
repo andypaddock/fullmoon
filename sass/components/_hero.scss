@@ -17,12 +17,6 @@
       .hero-textblock {
         display: flex;
         flex-direction: column;
-        .heading-1 {
-          font-size: 3rem;
-          @media only screen and (min-width: $bp-large) {
-            font-size: initial;
-          }
-        }
       }
     }
   }
@@ -78,7 +72,9 @@
       .hero-textblock {
         grid-column: center-start / center-end;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
         @media only screen and (min-width: $bp-large) {
           padding: 0 5rem;
         }
@@ -86,6 +82,16 @@
           font-size: 3rem;
           @media only screen and (min-width: $bp-large) {
             font-size: 6rem;
+          }
+        }
+        .booking-buttons {
+          align-self: self-start;
+          display: flex;
+          grid-gap: 3rem;
+
+          .button {
+            color: $color-white;
+            border-color: $color-white;
           }
         }
       }
@@ -110,7 +116,10 @@
       }
     }
     &.hero-75 {
-      height: calc(75vh - $headerheight);
+      height: calc(100vh - $headerheight);
+      @media only screen and (min-width: $bp-large) {
+        height: calc(75vh - $headerheight);
+      }
       .hero-slider,
       .slider-image,
       video {
@@ -118,7 +127,10 @@
       }
     }
     &.hero-50 {
-      height: calc(50vh - $headerheight);
+      height: calc(100vh - $headerheight);
+      @media only screen and (min-width: $bp-large) {
+        height: calc(50vh - $headerheight);
+      }
       .hero-slider,
       .slider-image,
       video {

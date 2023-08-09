@@ -92,6 +92,14 @@ footer {
 }
 .footer-accordian {
   padding: 5rem 0;
+  @media only screen and (min-width: $bp-large) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    border: 1px solid $color-white;
+    padding: 0rem;
+    margin-top: 15rem;
+  }
   &--heading {
     display: flex;
     justify-content: space-between;
@@ -110,6 +118,15 @@ footer {
     }
   }
   &--links {
+    @media only screen and (min-width: $bp-large) {
+      grid-column: 1;
+      grid-row: 1;
+      padding: 5rem;
+      border-right: 1px solid $color-white;
+      .footer-accordian--heading {
+        display: none;
+      }
+    }
     ul {
       list-style: none;
       display: flex;
@@ -137,9 +154,56 @@ footer {
       }
       a {
         color: $color-white;
+        font-size: 1.6rem;
+        font-family: $font-header;
         &:hover {
           color: $color-primary;
         }
+      }
+    }
+  }
+  &--pub {
+    @media only screen and (min-width: $bp-large) {
+      grid-column: 2;
+      grid-row: 1;
+      padding: 5rem 0 0 3rem;
+      .footer-accordian--heading {
+        border-bottom: none;
+        padding: 2rem 0 0;
+        i {
+          display: none;
+        }
+      }
+    }
+  }
+  &--kitchen {
+    @media only screen and (min-width: $bp-large) {
+      grid-column: 3;
+      grid-row: 1;
+      padding: 5rem 0 0;
+      .footer-accordian--heading {
+        border-bottom: none;
+        padding: 2rem 0 0;
+        i {
+          display: none;
+        }
+      }
+    }
+  }
+  &--contact {
+    .spacer-bar {
+      display: none;
+    }
+    @media only screen and (min-width: $bp-large) {
+      grid-column: 1;
+      grid-row: 2;
+      border-right: 1px solid $color-white;
+      border-top: 1px solid $color-white;
+      .footer-accordian--heading {
+        display: none;
+      }
+      .spacer-bar {
+        display: flex;
       }
     }
   }
@@ -147,13 +211,19 @@ footer {
 .footer-accordian--content {
   padding: 2rem 0;
   display: none;
+  @media only screen and (min-width: $bp-large) {
+    display: flex;
+    flex-direction: column;
+  }
   .contacts-wrapper {
     display: flex;
     flex-direction: column;
     @media only screen and (min-width: $bp-large) {
       flex-direction: row;
       text-align: left;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
+      grid-gap: 3rem;
     }
   }
   .email,
@@ -163,6 +233,9 @@ footer {
     font-size: 1.6rem;
     a {
       color: $color-white;
+    }
+    @media only screen and (min-width: $bp-large) {
+      padding-top: 0;
     }
   }
   @media only screen and (min-width: $bp-large) {

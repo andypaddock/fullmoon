@@ -9,32 +9,56 @@ $anchorTop = get_field('hero_image_bleed');
     <section
         class="container full-image imageoff-<?php the_field('mobile_offset'); ?> <?php the_field('hero_height'); ?>  anchor-<?php the_field('image_anchor'); ?>"
         style="background-image: url(<?php if ($heroImage) : ?><?php echo $heroImage['sizes']['hero-image']; ?><?php else : ?><?php echo get_the_post_thumbnail_url(get_the_ID(), 'hero-image'); ?><?php endif ?>)">
-
-        <div class="hero-textblock">
+        <?php if ( !is_single() ) { ?>
+        <div class="hero-textblock fmtop">
             <h1 class="heading-1 heading-1--light tileup">
                 <?php if (get_sub_field('hero_heading')): ?><?php the_sub_field('hero_heading'); ?><?php else: ?><?php the_title(); ?><?php endif ?>
             </h1>
-            <?php 
-$link = get_sub_field('hero_link');
-if( $link ): 
-    $link_url = $link['url'];
-    $link_title = $link['title'];
-    $link_target = $link['target'] ? $link['target'] : '_self';
-    ?>
-            <a class="button light tileup" href="<?php echo esc_url( $link_url ); ?>"
-                target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><i
-                    class="fa-sharp fa-light fa-arrow-right"></i></a>
-            <?php endif; ?>
+            <div class="booking-buttons">
+                <?php
+                                $link = get_field('book_table', 'options');
+                                if ($link) :
+                                    $link_url = $link['url'];
+                                    $link_title = $link['title'];
+                                    $link_target = $link['target'] ? $link['target'] : '_self';
+                                ?>
+                <a class="button" href="<?php echo esc_url($link_url); ?>"
+                    target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
+                <?php endif; ?>
+                <?php
+                                $link = get_field('book_room', 'options');
+                                if ($link) :
+                                    $link_url = $link['url'];
+                                    $link_title = $link['title'];
+                                    $link_target = $link['target'] ? $link['target'] : '_self';
+                                ?>
+                <a class="button" href="<?php echo esc_url($link_url); ?>"
+                    target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
+                <?php endif; ?>
+            </div>
         </div>
-
-        <div class="center-wrapper">
+        <?php } ?>
+        <!-- <div class="center-wrapper">
             <div class="center bounce">
                 <i class="fa-sharp fa-light fa-chevron-down"></i>
             </div>
-        </div>
+        </div> -->
 
     </section>
+    <?php if ( is_single() ) { ?>
+    <section class="container news-meta">
+        <?php wpb_posts_nav(); ?>
+        <div class="row <?php the_sub_field('column_size'); ?>">
+            <h3 class="heading-5 heading-5--green tileup">
+                <?php echo get_the_date(); ?>
+            </h3>
+            <h1 class="heading-1 tileup">
+                <?php if (get_sub_field('hero_heading')): ?><?php the_sub_field('hero_heading'); ?><?php else: ?><?php the_title(); ?><?php endif ?>
+            </h1>
 
+        </div>
+    </section>
+    <?php } ?>
     <?php elseif ($heroType == 'video') : ?>
     <section class="container full-image <?php the_field('hero_height'); ?>">
         <video playsinline autoplay muted loop poster="<?php echo esc_url($heroImage['url']); ?>" id="bgvideo" width="x"
@@ -63,7 +87,19 @@ if( $link ):
             </div>
         </div>
     </section>
+    <?php if ( is_single() ) { ?>
+    <section class="container news-meta">
+        <div class="row <?php the_sub_field('column_size'); ?>">
+            <h3 class="heading-5 heading-5--green tileup">
+                <?php echo get_the_date(); ?>
+            </h3>
+            <h1 class="heading-1 tileup">
+                <?php if (get_sub_field('hero_heading')): ?><?php the_sub_field('hero_heading'); ?><?php else: ?><?php the_title(); ?><?php endif ?>
+            </h1>
 
+        </div>
+    </section>
+    <?php } ?>
     <?php elseif ($heroType == 'slider') : ?>
     <section class="container header full-image  <?php the_field('hero_height'); ?>">
         <div class="hero-slider">
@@ -134,7 +170,19 @@ if( $link ):
 
     </section>
 
+    <?php if ( is_single() ) { ?>
+    <section class="container news-meta">
+        <div class="row <?php the_sub_field('column_size'); ?>">
+            <h3 class="heading-5 heading-5--green tileup">
+                <?php echo get_the_date(); ?>
+            </h3>
+            <h1 class="heading-1 tileup">
+                <?php if (get_sub_field('hero_heading')): ?><?php the_sub_field('hero_heading'); ?><?php else: ?><?php the_title(); ?><?php endif ?>
+            </h1>
 
+        </div>
+    </section>
+    <?php } ?>
     <?php elseif ($heroType == 'contact') : ?>
 
     <section class="container hero-contact <?php the_field('hero_height'); ?>">
@@ -173,6 +221,7 @@ if( $link ):
 
 
     <?php elseif ($heroType == 'home') : ?>
+
     <section class="home-video">
         <video playsinline autoplay muted loop poster="" id="bgvideo" width="x" height="y">
             <source src="<?php echo $heroVideo['url']; ?>" type="video/mp4">
@@ -207,6 +256,8 @@ if( $link ):
         </div>
 
     </section>
+
+
     <?php endif; ?>
 </div>
 <div class="watermark">

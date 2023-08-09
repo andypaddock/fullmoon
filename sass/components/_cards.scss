@@ -55,6 +55,7 @@
     .row.fullwidth-text--wrapper {
       display: block;
       align-self: flex-end;
+      grid-column: full-start / full-end;
       @media only screen and (min-width: $bp-large) {
         grid-column: full-start / full-end;
       }
@@ -69,12 +70,15 @@
       object-fit: cover;
     }
     .link-text {
-      padding: 1rem 5rem;
+      padding: 1rem 2rem;
       background: rgba($color-primary-dark-2, 0.65);
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 100%;
+      @media only screen and (min-width: $bp-large) {
+        padding: 1rem 5rem;
+      }
       p {
         color: $color-primary;
         &:first-of-type {

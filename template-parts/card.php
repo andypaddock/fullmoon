@@ -7,7 +7,7 @@
         $cardType = get_sub_field('card_type');
         $pageElements = get_field('page_element_headings', 'options');
         ?>
-        <div class="card mb-sm">
+        <div class="card mb-sm fmbottom">
 
             <?php if ($cardType == 'boxed') : ?>
 
@@ -41,7 +41,7 @@
 $featured_post = get_sub_field('large_page_link');
 if ($featured_post):
     ?><div class="card__fullwidth container">
-                <div class="row fullwidth-text--wrapper">
+                <div class="row extended fullwidth-text--wrapper">
                     <div class="link-text">
                         <h2 class="heading-2 heading-2--light"><?php echo esc_html($featured_post->post_title); ?></h2>
                         <?php the_sub_field('large_link_description'); ?>

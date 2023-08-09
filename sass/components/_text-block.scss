@@ -51,11 +51,25 @@
       // }
       .left {
         float: left;
-        padding: 0 4rem 1rem 0;
+        padding: 0;
+        img {
+          width: 100%;
+          height: auto;
+        }
+        @media only screen and (min-width: $bp-large) {
+          padding: 0 4rem 1rem 0;
+        }
       }
       .right {
         float: right;
-        padding: 0 0 1rem 4rem;
+        padding: 0;
+        img {
+          width: 100%;
+          height: auto;
+        }
+        @media only screen and (min-width: $bp-large) {
+          padding: 0 0 1rem 4rem;
+        }
       }
     }
   }
