@@ -14,5 +14,7 @@
 
   &:hover {
     border: 1px solid $color-primary;
+    color: $color-white;
+    background: $color-primary;
   }
 }

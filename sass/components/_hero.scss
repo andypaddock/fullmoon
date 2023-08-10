@@ -86,9 +86,11 @@
         }
         .booking-buttons {
           align-self: self-start;
-          display: flex;
+          display: none;
           grid-gap: 3rem;
-
+          @media only screen and (min-width: $bp-large) {
+            display: flex;
+          }
           .button {
             color: $color-white;
             border-color: $color-white;
