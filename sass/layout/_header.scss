@@ -25,7 +25,7 @@ header {
   .opening-bar {
     font-family: $font-header;
     font-size: 1.4rem;
-    background-color: rgba($color: $color-primary, $alpha: 0.65);
+    background-color: rgba($color: $color-primary, $alpha: 0.75);
     color: $color-white;
     padding: 1rem 0;
     display: none;
@@ -54,7 +54,7 @@ header {
   .button {
     margin-top: 0;
     color: $color-white;
-    border-color: $color-white;
+    border-color: $color-primary;
     line-height: 1;
   }
 }

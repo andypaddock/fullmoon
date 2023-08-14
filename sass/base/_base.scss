@@ -54,4 +54,8 @@ a {
   height: 100%;
   left: -50vw;
   opacity: 0.1;
+  &.right {
+    left: unset;
+    right: -50vw;
+  }
 }

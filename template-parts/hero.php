@@ -38,11 +38,11 @@ $anchorTop = get_field('hero_image_bleed');
             </div>
         </div>
         <?php } ?>
-        <!-- <div class="center-wrapper">
-            <div class="center bounce">
+        <div class="center-wrapper">
+            <div class="center bounce" id="scrollButton">
                 <i class="fa-sharp fa-light fa-chevron-down"></i>
             </div>
-        </div> -->
+        </div>
 
     </section>
     <?php if ( is_single() ) { ?>
@@ -260,15 +260,21 @@ if( $link ):
 
     <?php endif; ?>
 </div>
-<div class="watermark">
-    <?php 
-	
+<?php 
+	$singleImage = get_field('background_image');
 $images = get_field('watermarks', 'option');
 $rand = array_rand($images, 1);
 	
-if( $images ): ?>
+if( $singleImage ): ?>
+<div class="watermark <?php the_field('background_anchor');?>">
+    <div>
+        <img src="<?php echo $singleImage['url']; ?>" alt="<?php echo $singleImage['alt']; ?>" />
+    </div>
+</div>
+<?php elseif($images): ?>
+<div class="watermark">
     <div>
         <img src="<?php echo $images[$rand]['url']; ?>" alt="<?php echo $images[$rand]['alt']; ?>" />
     </div>
-    <?php endif; ?>
 </div>
+<?php endif; ?>

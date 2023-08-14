@@ -14,12 +14,31 @@
       min-height: 80%;
       right: 5rem;
     }
+    p {
+      &:first-of-type {
+        font-size: 1.8rem;
+        font-style: italic;
+      }
+    }
   }
 }
 .gallery-wrapper {
   display: grid;
   @media only screen and (min-width: $bp-large) {
     padding: 0 5rem;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 5rem;
+      width: 10rem;
+      height: 100%;
+      background: rgb(247, 245, 242);
+      background: linear-gradient(
+        270deg,
+        rgba(247, 245, 242, 1) 0%,
+        rgba(247, 245, 242, 0) 100%
+      );
+    }
   }
   .gallery-image {
     img {

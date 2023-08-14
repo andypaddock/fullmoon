@@ -10,6 +10,15 @@
  */
 
 ?>
+<div class="popup" id="tablebook">
+    <div class="popup__content">
+        <div class="popup__main">
+            <a href="#teamblock" class="popup__close"><i class="fa-thin fa-xmark"></i></a>
+            <h2 class="heading-2">Book a Table</h2>
+            <?php the_field('form_code','options'); ?>
+        </div>
+    </div>
+</div>
 <?php $pageElements = get_field('page_element_headings', 'options'); ?>
 <footer id="colophon" class="container">
     <div class="row col-12 footer-accordian">
