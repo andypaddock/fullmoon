@@ -93,6 +93,9 @@
         </div>
     </div>
     <div class="row col-8 footer-gutter">
+        <div class="terms">
+            <div class="copyright"><?php the_field('copy_text', 'options'); ?></div>
+        </div>
         <div class="footer__social"><?php if (have_rows('social_media_links', 'options')) : ?>
             <ul class="social-links">
                 <?php while (have_rows('social_media_links', 'options')) : the_row(); ?>
@@ -113,9 +116,7 @@
             </ul>
             <?php endif; ?>
         </div>
-        <div class="terms">
-            <div class="copyright"><?php the_field('copy_text', 'options'); ?></div>
-        </div>
+
         <div class="silverless"><a href="https://silverless.co.uk">
 
                 <?php get_template_part('inc/img/silverless', 'logo'); ?>

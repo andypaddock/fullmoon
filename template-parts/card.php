@@ -40,47 +40,51 @@
             <?php
 $featured_post = get_sub_field('large_page_link');
 if ($featured_post):
-    ?><div class="card__fullwidth container">
-                <div class="row extended fullwidth-text--wrapper">
-                    <div class="link-text">
-                        <h2 class="heading-2 heading-2--light"><?php echo esc_html($featured_post->post_title); ?></h2>
-                        <?php the_sub_field('large_link_description'); ?>
-                        <a class="bottom-link"
-                            href="<?php the_permalink($featured_post->ID); ?>"><?php get_template_part('inc/img/point'); ?></a>
+    ?><a class="bottom-link" href="<?php the_permalink($featured_post->ID); ?>">
+                <div class="card__fullwidth container">
+                    <div class="row extended fullwidth-text--wrapper">
+                        <div class="link-text">
+                            <h2 class="heading-2 heading-2--light"><?php echo esc_html($featured_post->post_title); ?>
+                            </h2>
+                            <?php the_sub_field('large_link_description'); ?>
+                            <?php get_template_part('inc/img/point'); ?>
+                        </div>
                     </div>
-                </div>
-                <?php
+                    <?php
     $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($featured_post->ID), 'hero-image');
     if ($thumbnail) :
         ?>
-                <img src="<?php echo $thumbnail[0]; ?>" alt="<?php echo esc_attr($featured_post->post_title); ?>">
-                <?php endif; ?>
-                <?php endif; ?>
-            </div>
+                    <img class="<?php if(get_sub_field('image_sat')): echo 'saturate'; endif;?>"
+                        src="<?php echo $thumbnail[0]; ?>" alt="<?php echo esc_attr($featured_post->post_title); ?>">
+                    <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+            </a>
 
             <?php elseif ($cardType === 'fulllink') : ?>
-            <div class="card__fullwidth container">
-                <div class="row fullwidth-text--wrapper">
-
-                    <div class="link-text">
-                        <h2 class="heading-2 heading-2--light"><?php the_sub_field('custom_link_title'); ?></h2>
-                        <?php the_sub_field('custom_link_desc'); ?>
-
-
-
-                        <?php 
+            <?php 
 $link = get_sub_field('custom_link');
 if( $link ): 
     $link_url = $link['url'];
     $link_title = $link['title'];
     $link_target = $link['target'] ? $link['target'] : '_self';
     ?>
-                        <a class="bottom-link" href="<?php echo esc_url( $link_url ); ?>"
-                            target="<?php echo esc_attr( $link_target ); ?>"><?php get_template_part('inc/img/point'); ?></a>
-                        <?php endif; ?>
+            <a class="bottom-link" href="<?php echo esc_url( $link_url ); ?>"
+                target="<?php echo esc_attr( $link_target ); ?>"
+                title="Click for <?php the_sub_field('custom_link_title'); ?>">
+                <div class="card__fullwidth container <?php if(get_sub_field('image_sat')): echo 'saturate'; endif;?>">
+                    <div class="row fullwidth-text--wrapper">
+
+                        <div class="link-text">
+                            <h2 class="heading-2 heading-2--light"><?php the_sub_field('custom_link_title'); ?></h2>
+
+                            <?php get_template_part('inc/img/point'); ?>
+
+
+
+                        </div>
                     </div>
-                </div>
-                <?php 
+                    <?php 
 $image = get_sub_field('custom_link_image');
 $size = 'full'; // (thumbnail, medium, large, full or custom size)
 if( $image ) {
@@ -88,7 +92,9 @@ if( $image ) {
 }?>
 
 
-            </div>
+                </div>
+            </a>
+            <?php endif; ?>
 
             <?php endif; ?>
         </div>

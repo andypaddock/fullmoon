@@ -51,7 +51,7 @@
   }
   &__fullwidth {
     position: relative;
-    min-height: 35rem;
+    min-height: 45rem;
     .row.fullwidth-text--wrapper {
       display: block;
       align-self: flex-end;
@@ -93,6 +93,7 @@
         place-content: center;
         font-size: 4rem;
         color: $color-primary;
+        cursor: pointer;
 
         &:hover {
         }
@@ -102,6 +103,11 @@
             color: $color-black;
           }
         }
+      }
+    }
+    &.saturate {
+      img {
+        filter: saturate(1.5);
       }
     }
   }

@@ -85,7 +85,10 @@ section {
       padding: 8rem;
     }
     &.massive {
-      padding: 12rem;
+      padding: 3rem;
+      @media only screen and (min-width: $bp-large) {
+        padding: 12rem;
+      }
     }
   }
 }

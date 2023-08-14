@@ -8,8 +8,17 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10rem 0 3rem;
+    @media only screen and (min-width: $bp-large) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
     .terms {
       text-align: center;
+    }
+    .footer__social {
+      display: flex;
+      justify-content: center;
     }
     .social-links {
       display: flex;
@@ -17,7 +26,7 @@ footer {
       i {
         color: $color-white;
         font-size: 1.25rem;
-        padding-right: 2rem;
+        padding: 2rem;
         transition: all 0.2s;
         &:hover {
           color: $color-primary;
