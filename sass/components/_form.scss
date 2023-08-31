@@ -17,3 +17,21 @@
     }
   }
 }
+.contact-form {
+  padding: 0 5rem;
+  @media only screen and (min-width: $bp-large) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+  &--image {
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+    }
+  }
+  &--shortcode {
+    padding: 0 8rem;
+  }
+}

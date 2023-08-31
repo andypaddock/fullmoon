@@ -98,6 +98,10 @@
 <?php get_template_part('template-parts/sublinks'); ?>
 <?php elseif (get_row_layout() == 'gallery_card') : ?>
 <?php get_template_part('template-parts/gallery-card'); ?>
+<?php elseif (get_row_layout() == 'simpleimage') : ?>
+<?php get_template_part('template-parts/simpleimage'); ?>
+<?php elseif (get_row_layout() == 'amenities') : ?>
+<?php get_template_part('template-parts/amenities'); ?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

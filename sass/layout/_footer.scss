@@ -135,6 +135,10 @@ footer {
       .footer-accordian--heading {
         display: none;
       }
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
     }
     ul {
       list-style: none;
@@ -142,22 +146,22 @@ footer {
       flex-wrap: wrap;
       flex-direction: column;
       @media only screen and (min-width: $bp-large) {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        li {
-          flex-basis: 33.33%; /* Each column takes up one-third of the container */
-          text-align: left; /* Align the content of each column to the left */
-          flex: unset;
-        }
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 2rem;
+        // li {
+        //   flex-basis: 33.33%; /* Each column takes up one-third of the container */
+        //   text-align: left; /* Align the content of each column to the left */
+        //   flex: unset;
+        // }
 
-        li:nth-child(2) {
-          text-align: center; /* Align the content of the center column to the center */
-        }
+        // li:nth-child(2) {
+        //   text-align: center; /* Align the content of the center column to the center */
+        // }
 
-        li:nth-child(3) {
-          text-align: right; /* Align the content of the right column to the right */
-        }
+        // li:nth-child(3) {
+        //   text-align: right; /* Align the content of the right column to the right */
+        // }
       }
       li {
       }

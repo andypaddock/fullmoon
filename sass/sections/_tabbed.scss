@@ -143,14 +143,17 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-container {
   border-radius: 0 !important;
   color: $color-primary !important;
   background-color: $color-white !important;
-  &::after {
-    font: var(--fa-font-light);
-    content: "\f054";
-    padding-left: 1rem;
-  }
+  border: 1px solid $color-primary !important;
+  padding: 0 2.5rem !important;
+  // &::after {
+  //   font: var(--fa-font-light);
+  //   content: "\f054";
+  //   padding-left: 1rem;
+  // }
 }
 input::placeholder,
 textarea::placeholder {
   color: $color-primary !important;
+  opacity: 1 !important;
   font-family: $font-header;
 }

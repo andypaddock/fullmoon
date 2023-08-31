@@ -134,10 +134,16 @@
   }
 }
 .breadcrumb {
-  text-transform: uppercase;
+  text-align: center;
   padding: 5rem 0 10rem;
 
   .current {
     color: $color-primary;
+  }
+}
+article {
+  &.double {
+    column-count: 2;
+    column-gap: 2rem;
   }
 }

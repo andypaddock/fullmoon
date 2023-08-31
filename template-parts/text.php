@@ -16,11 +16,8 @@
                         <h2
                             class="<?php the_sub_field('heading_size'); ?> <?php the_sub_field('heading_size'); ?><?php the_sub_field('heading_colour'); ?>">
                             <?php the_sub_field('title'); ?></h2>
-                        <article class="<?php if (get_sub_field('show_first')): echo 'read-more' ; endif;?>">
+                        <article class="<?php the_sub_field('columns');?>">
                             <?php the_sub_field('paragraphs'); ?>
-                            <?php if (get_sub_field('show_first')):?>
-                            <a href="#" class="read-more-link">Read More</a>
-                            <?php endif;?>
                         </article>
                         <?php
                             $link = get_sub_field('link');

@@ -3,6 +3,7 @@ $heroType = get_sub_field('hero_type_select');
 $heroImage = get_sub_field('hero_image');
 $heroVideo = get_sub_field('hero_video');
 $anchorTop = get_field('hero_image_bleed');
+$pageElements = get_field('page_element_headings', 'options');
 ?>
 <div class="hero-wrapper <?php if ($anchorTop || is_singular( 'post' )) : echo 'anchor-top'; endif; ?>">
     <?php if ($heroType == 'image') : ?>
@@ -10,10 +11,16 @@ $anchorTop = get_field('hero_image_bleed');
         class="container full-image imageoff-<?php the_field('mobile_offset'); ?> <?php the_field('hero_height'); ?>  anchor-<?php the_field('image_anchor'); ?>"
         style="background-image: url(<?php if ($heroImage) : ?><?php echo $heroImage['sizes']['hero-image']; ?><?php else : ?><?php echo get_the_post_thumbnail_url(get_the_ID(), 'hero-image'); ?><?php endif ?>)">
         <?php if ( !is_single() ) { ?>
-        <div class="hero-textblock fmtop">
+        <div class="hero-textblock row <?php the_sub_field('column_size'); ?> fmtop">
             <h1 class="heading-1 heading-1--light tileup">
                 <?php if (get_sub_field('hero_heading')): ?><?php the_sub_field('hero_heading'); ?><?php else: ?><?php the_title(); ?><?php endif ?>
             </h1>
+            <?php if ( !is_front_page() ) { ?>
+            <div class="hero-para">
+                <?php the_sub_field('sub_desc');?>
+            </div>
+            <?php } ?>
+            <?php if ( is_front_page() ) { ?>
             <div class="booking-buttons">
                 <?php
                                 $link = get_field('book_table', 'options');
@@ -36,14 +43,26 @@ $anchorTop = get_field('hero_image_bleed');
                     target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
                 <?php endif; ?>
             </div>
+            <?php } ?>
         </div>
         <?php } ?>
+        <?php if(get_field('hero_height') == 'hero-full') {?>
         <div class="center-wrapper">
             <div class="center bounce" id="scrollButton">
                 <i class="fa-sharp fa-light fa-chevron-down"></i>
             </div>
         </div>
-
+        <?php }?>
+        <?php if(get_sub_field('add_booking_bar')) {?>
+        <div class="booking-bar row extended">
+            <?php if(get_sub_field('booking_selector') == 'table'): ?><a href="<?php echo $pageElements['table_booking_url']; ?>"><span><?php echo $pageElements['table_booking_text']; ?></span> <?php echo $pageElements['booking_text_gen']; ?><?php get_template_part('inc/img/point'); ?></a>
+                
+                <?php else: ?>
+               <a href="<?php echo $pageElements['room_booking_url']; ?>" target="_blank"><span><?php echo $pageElements['room_booking_text']; ?></span><?php echo $pageElements['booking_text_gen']; ?><?php get_template_part('inc/img/point'); ?></a>
+                <?php endif; ?>
+           
+        </div>
+        <?php }?>
     </section>
     <?php if ( is_single() ) { ?>
     <section class="container news-meta">
@@ -183,40 +202,9 @@ if( $link ):
         </div>
     </section>
     <?php } ?>
-    <?php elseif ($heroType == 'contact') : ?>
+    <?php elseif ($heroType == 'blank') : ?>
 
-    <section class="container hero-contact <?php the_field('hero_height'); ?>">
-        <div class="hero-contact--map">
-            <?php $location = get_sub_field('hero-location');?>
-            <div id='map-hero'></div>
-            <script>
-            mapboxgl.accessToken =
-                'pk.eyJ1Ijoic2lsdmVybGVzcyIsImEiOiJjaXNibDlmM2gwMDB2Mm9tazV5YWRmZTVoIn0.ilTX0t72N3P3XbzGFhUKcg';
-            var map = new mapboxgl.Map({
-                container: 'map-hero',
-                style: 'mapbox://styles/silverless/ckk5kbjw20m9117oq075t73og',
-                center: [<?php echo esc_attr($location['lng']); ?>, <?php echo esc_attr($location['lat']); ?>],
-                zoom: 11,
-                maxZoom: 17,
-                minZoom: 6,
-            });
-            map.addControl(new mapboxgl.NavigationControl());
-            // add marker to map
-            new mapboxgl.Marker({
-                    color: 'black'
-                })
-                .setLngLat([<?php echo esc_attr($location['lng']); ?>, <?php echo esc_attr($location['lat']); ?>])
-                .addTo(map);
-            </script>
-        </div>
-        <div class="hero-contact--shortcode">
-            <?php
-                if (get_sub_field('contact_form_shortcode')) {
-                    echo do_shortcode(get_sub_field('contact_form_shortcode'));
-                }
-                ?>
-        </div>
-    </section>
+    
 
 
 

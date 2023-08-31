@@ -10,51 +10,30 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<?php $pageImage = get_field('error_bg_image', 'options'); ?>
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'campiyakanzi' ); ?></h1>
-			</header><!-- .page-header -->
+<section class="container hero-wrapper error-404 anchor-top" style="background-image: url(<?php echo $pageImage; ?>);">
+    <div class="row col-6 error-message">
+        <div class="content">
+            <h1 class="heading-404"><?php the_field('error_heading','options');?></h1>
+            <h3 class="heading-404 heading-404--sub"><?php the_field('error_sub_heading','options');?></h3>
+            <h2 class="heading-3 heading-3--light"><?php the_field('error_message','options');?></h2>
+            <?php 
+$link = get_field('errorlink','options');
+if( $link ): 
+    $link_url = $link['url'];
+    $link_title = $link['title'];
+    $link_target = $link['target'] ? $link['target'] : '_self';
+    ?>
+            <a class="button light" href="<?php echo esc_url( $link_url ); ?>"
+                target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><i
+                    class="fa-sharp fa-light fa-arrow-right"></i></a>
+            <?php endif; ?>
+        </div>
+    </div>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'campiyakanzi' ); ?></p>
+</section>
 
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'campiyakanzi' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$campiyakanzi_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'campiyakanzi' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$campiyakanzi_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
 
 <?php
 get_footer();

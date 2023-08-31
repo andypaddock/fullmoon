@@ -1,0 +1,20 @@
+.section-cta-banner {
+  .cta-banner-wrapper {
+    position: relative;
+    margin-bottom: 10rem;
+    img {
+      position: absolute;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .cta-button {
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10rem 0 4rem;
+  }
+}

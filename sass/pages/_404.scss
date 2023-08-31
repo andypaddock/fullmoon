@@ -1,0 +1,59 @@
+.error404 {
+}
+.error-404 {
+  height: 75vh;
+  background-position: bottom;
+  background-color: $color-primary-dark;
+  .error-message {
+    display: flex;
+    justify-content: center;
+    color: $color-white;
+    text-align: center;
+    padding-top: 20rem;
+    .heading-404 {
+      font-size: 6rem;
+      line-height: 1;
+      &--sub {
+        font-family: $font-header;
+        font-size: 1rem;
+        text-transform: uppercase;
+      }
+    }
+    .heading-3 {
+      padding: 3rem 0;
+    }
+    .button {
+      @media only screen and (min-width: $bp-large) {
+        margin: 0 10rem;
+      }
+    }
+  }
+}
+.error404 {
+  .menu-wrap {
+    border-bottom: 1px solid $color-white;
+    .hamburger > div {
+      background-color: $color-white;
+    }
+  }
+  header.global {
+    .header-wrapper {
+      .logo {
+        border-bottom: 1px solid $color-white;
+      }
+      .header-cart {
+        border-bottom: 1px solid $color-white;
+      }
+      .cart-button {
+        color: $color-white;
+        border-left: 1px solid $color-white;
+      }
+      i {
+        color: $color-white;
+      }
+    }
+    svg path {
+      fill: $color-white;
+    }
+  }
+}

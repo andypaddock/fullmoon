@@ -1,0 +1,29 @@
+.section-amenity {
+  padding: 2rem 5rem;
+  background: $color-primary-dark;
+  color: $color-white;
+  .amenity-wrapper {
+    list-style: none;
+    @media only screen and (min-width: $bp-large) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 5rem;
+      li {
+        border-bottom: 1px solid $color-white;
+        border-right: 1px solid $color-white;
+        padding: 1rem;
+      }
+      li:nth-child(3n - 1) {
+        text-align: center;
+      }
+      li:nth-child(3n) {
+        text-align: center;
+        border-right: none;
+      }
+      li:nth-child(3n + 1):nth-last-child(-n + 3),
+      li:nth-child(3n + 1):nth-last-child(-n + 3) ~ li {
+        border-bottom: none;
+      }
+    }
+  }
+}

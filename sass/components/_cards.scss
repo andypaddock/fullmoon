@@ -112,3 +112,99 @@
     }
   }
 }
+.boxed-card {
+  display: flex;
+  flex-wrap: wrap;
+  @media only screen and (min-width: $bp-large) {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+  }
+
+  &--image {
+    img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    &.map {
+      display: grid;
+      width: 100%;
+    }
+  }
+  &.right {
+    flex-direction: row-reverse;
+    @media only screen and (min-width: $bp-large) {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      .boxed-card--text {
+        grid-column: 2;
+        grid-row: 1;
+      }
+      .boxed-card--image {
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+    .boxed-card--text {
+      @media only screen and (min-width: $bp-large) {
+        margin-right: 0;
+        margin-left: -10vw;
+      }
+    }
+  }
+  &--text {
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    @media only screen and (min-width: $bp-large) {
+      margin-right: -10vw;
+    }
+
+    .text-box {
+      border: 1px solid $color-primary;
+      background: $color-off-white;
+      padding: 8rem;
+      margin: 4rem 0;
+      flex: 1;
+      p {
+        &:first-of-type {
+          font-size: 1.8rem;
+          font-style: italic;
+        }
+      }
+    }
+    .text-box.quote {
+      p {
+        position: relative;
+        font-style: initial;
+        font-size: initial;
+      }
+      p::before {
+        content: open-quote;
+        color: $color-primary;
+        font-family: $font-header;
+        font-size: 4.5rem;
+        position: absolute;
+        top: -3rem;
+        left: -3rem;
+      }
+      p::after {
+        content: close-quote;
+        color: $color-primary;
+        font-family: $font-header;
+        font-size: 4.5rem;
+        position: absolute;
+        right: 1rem;
+        padding-top: 2rem;
+      }
+    }
+    .quote-cite {
+      display: block;
+      color: $color-primary;
+      font-family: $font-header;
+      font-size: 1.6rem;
+      padding: 2rem 0 0;
+    }
+  }
+}

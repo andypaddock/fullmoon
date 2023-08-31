@@ -476,10 +476,10 @@ activityTriggers.forEach(function (trigger) {
   });
 });
 
-document.getElementById("scrollButton").addEventListener("click", function () {
-  const windowHeight = window.innerHeight;
-  window.scrollTo({
-    top: windowHeight,
-    behavior: "smooth",
-  });
-});
+// document.getElementById("scrollButton").addEventListener("click", function () {
+//   const windowHeight = window.innerHeight;
+//   window.scrollTo({
+//     top: windowHeight,
+//     behavior: "smooth",
+//   });
+// });

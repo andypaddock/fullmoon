@@ -17,16 +17,40 @@
       .hero-textblock {
         display: flex;
         flex-direction: column;
+        text-align: center;
       }
     }
   }
-  svg {
-    display: flex;
-    width: 45rem;
-    margin-top: 3rem;
-  }
+  // svg {
+  //   display: flex;
+  //   width: 45rem;
+  //   margin-top: 3rem;
+  // }
   .more {
     font-size: 1.5rem;
+  }
+  .booking-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-primary-dark;
+    color: $color-white;
+    padding: 1rem;
+    font-size: 2.5rem;
+    font-family: $font-header;
+    svg {
+      margin: 0 2rem;
+    }
+    span {
+      font-style: italic;
+      padding-right: 1rem;
+    }
+    a {
+      color: $color-white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 .hero-menu {
@@ -71,10 +95,12 @@
       box-shadow: inset 0 0 0 1000px rgba(#373b62, 0.3);
 
       .hero-textblock {
-        grid-column: center-start / center-end;
+        // grid-column: center-start / center-end;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        text-align: center;
+        color: $color-white;
 
         @media only screen and (min-width: $bp-large) {
           padding: 0 5rem;
@@ -83,6 +109,11 @@
           font-size: 3rem;
           @media only screen and (min-width: $bp-large) {
             font-size: 6rem;
+          }
+        }
+        p {
+          &:first-of-type {
+            font-style: italic;
           }
         }
         .booking-buttons {
