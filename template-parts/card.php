@@ -89,7 +89,7 @@ if ($featured_post):
                         'pk.eyJ1Ijoic2lsdmVybGVzcyIsImEiOiJjaXNibDlmM2gwMDB2Mm9tazV5YWRmZTVoIn0.ilTX0t72N3P3XbzGFhUKcg';
                     var map = new mapboxgl.Map({
                         container: 'map',
-                        style: 'mapbox://styles/silverless/ckk5kbjw20m9117oq075t73og',
+                        style: 'mapbox://styles/silverless/cl8a0kjbz003615s1d9m567qj',
                         center: [<?php echo esc_attr($location['lng']); ?>,
                             <?php echo esc_attr($location['lat']); ?>
                         ],
