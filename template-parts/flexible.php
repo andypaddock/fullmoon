@@ -102,6 +102,8 @@
 <?php get_template_part('template-parts/simpleimage'); ?>
 <?php elseif (get_row_layout() == 'amenities') : ?>
 <?php get_template_part('template-parts/amenities'); ?>
+<?php elseif (get_row_layout() == 'local') : ?>
+<?php get_template_part('template-parts/local'); ?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

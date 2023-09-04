@@ -134,8 +134,10 @@ jQuery(document).ready(function ($) {
   });
 
   $(".gallery-wrapper").slick({
+    infinite: true,
     arrows: false,
     slidesToShow: 1.1,
+    initialSlide: 1,
     responsive: [
       {
         breakpoint: 768,
@@ -483,3 +485,20 @@ activityTriggers.forEach(function (trigger) {
 //     behavior: "smooth",
 //   });
 // });
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollDownArrow = document.getElementById("scroll-down-arrow");
+
+  // Add a click event listener to the arrow element
+  scrollDownArrow.addEventListener("click", function () {
+    // Calculate the target scroll position as 100vh from the top
+    const targetScrollPosition = window.innerHeight;
+
+    // Smoothly scroll to the target position
+    window.scrollTo({
+      top: targetScrollPosition,
+      behavior: "smooth",
+    });
+  });
+});
+
+refreshFsLightbox();

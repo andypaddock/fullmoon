@@ -18,7 +18,7 @@ html {
 body {
   font-family: $font-primary;
   background-color: $color-bg-light;
-  color: $color-black;
+  color: $color-primary-dark;
   font-weight: 300;
   line-height: 1.6;
   font-size: 1.4rem;
@@ -47,8 +47,8 @@ a {
   transform: translate(-50%, 1rem);
 }
 .watermark {
-  position: absolute;
-  top: 50vh;
+  position: relative;
+  // top: 50vh;
   z-index: -1;
   width: 100%;
   height: 100%;
@@ -58,4 +58,25 @@ a {
     left: unset;
     right: -50vw;
   }
+  &.blank {
+    top: 5vh;
+  }
+  &--image {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    img {
+      height: 100vh;
+      width: 100%;
+    }
+  }
+}
+.site-main {
+  overflow: hidden;
+}
+.background-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
 }

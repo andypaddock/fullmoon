@@ -11,7 +11,7 @@
     color: $color-white;
   }
   &--dark {
-    color: $color-grey-dark-1;
+    color: $color-primary-dark-2;
   }
 }
 
@@ -24,7 +24,7 @@
     color: $color-grey-light-1;
   }
   &--dark {
-    color: $color-grey-dark-1;
+    color: $color-primary-dark-2;
   }
   &--primary {
     color: $color-primary;
@@ -37,12 +37,13 @@
 .heading-3,
 h3 {
   @extend %heading;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-family: $font-primary;
   &--light {
     color: $color-grey-light-1;
   }
   &--dark {
-    color: $color-grey-dark-1;
+    color: $color-primary-dark-2;
   }
 }
 h3 {
@@ -57,7 +58,7 @@ h3 {
     color: $color-grey-light-1;
   }
   &--dark {
-    color: $color-grey-dark-1;
+    color: $color-primary-dark-2;
   }
 }
 

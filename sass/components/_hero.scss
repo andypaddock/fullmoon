@@ -201,7 +201,7 @@
 .center-wrapper {
   position: absolute;
   left: 50%;
-  bottom: 4rem;
+  bottom: 10rem;
   transform: translateX(-50%);
   .center {
     display: grid;
@@ -245,4 +245,7 @@
       fill: $color-white;
     }
   }
+}
+#scroll-down-arrow {
+  cursor: pointer;
 }

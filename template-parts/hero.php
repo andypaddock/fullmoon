@@ -47,8 +47,8 @@ $pageElements = get_field('page_element_headings', 'options');
         </div>
         <?php } ?>
         <?php if(get_field('hero_height') == 'hero-full') {?>
-        <div class="center-wrapper">
-            <div class="center bounce" id="scrollButton">
+         <div class="center-wrapper">
+            <div class="center bounce" id="scroll-down-arrow">
                 <i class="fa-sharp fa-light fa-chevron-down"></i>
             </div>
         </div>
@@ -101,8 +101,8 @@ if( $link ):
             <?php endif; ?>
         </div>
         <div class="center-wrapper">
-            <div class="center bounce">
-                <i class="fa-sharp fa-solid fa-chevron-down"></i>
+            <div class="center bounce" id="scroll-down-arrow">
+                <i class="fa-sharp fa-light fa-chevron-down"></i>
             </div>
         </div>
     </section>
@@ -147,8 +147,8 @@ if( $link ):
             <?php endif; ?>
         </div>
         <div class="center-wrapper">
-            <div class="center bounce">
-                <i class="fa-sharp fa-solid fa-chevron-down"></i>
+            <div class="center bounce" id="scroll-down-arrow">
+                <i class="fa-sharp fa-light fa-chevron-down"></i>
             </div>
         </div>
     </section>
@@ -181,9 +181,11 @@ if( $link ):
                     class="fa-sharp fa-light fa-arrow-right"></i></a>
             <?php endif; ?>
 
-            <div class="center bounce">
+            <div class="center-wrapper">
+            <div class="center bounce" id="scroll-down-arrow">
                 <i class="fa-sharp fa-light fa-chevron-down"></i>
             </div>
+        </div>
 
         </div>
 
@@ -238,7 +240,7 @@ if( $link ):
             <?php endif; ?>
         </div>
         <div class="center-wrapper">
-            <div class="center bounce">
+            <div class="center bounce" id="scroll-down-arrow">
                 <i class="fa-sharp fa-light fa-chevron-down"></i>
             </div>
         </div>
@@ -254,14 +256,14 @@ $images = get_field('watermarks', 'option');
 $rand = array_rand($images, 1);
 	
 if( $singleImage ): ?>
-<div class="watermark <?php the_field('background_anchor');?>">
-    <div>
+<div class="watermark <?php the_field('background_anchor');?> <?php if ($heroType == 'blank'): echo 'blank'; endif;?>">
+    <div class="watermark--image">
         <img src="<?php echo $singleImage['url']; ?>" alt="<?php echo $singleImage['alt']; ?>" />
     </div>
 </div>
 <?php elseif($images): ?>
 <div class="watermark">
-    <div>
+    <div class="watermark--image">
         <img src="<?php echo $images[$rand]['url']; ?>" alt="<?php echo $images[$rand]['alt']; ?>" />
     </div>
 </div>

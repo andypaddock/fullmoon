@@ -12,10 +12,10 @@
             <div class="text__one">
                 <div class="text-block <?php the_sub_field('text_align'); ?>">
                     <div class="text-block__wrapper fmbottom <?php the_sub_field('tb_bg'); ?>">
-
+<?php if(get_sub_field('title')):?>
                         <h2
                             class="<?php the_sub_field('heading_size'); ?> <?php the_sub_field('heading_size'); ?><?php the_sub_field('heading_colour'); ?>">
-                            <?php the_sub_field('title'); ?></h2>
+                            <?php the_sub_field('title'); ?></h2><?php endif; ?>
                         <article class="<?php the_sub_field('columns');?>">
                             <?php the_sub_field('paragraphs'); ?>
                         </article>
@@ -33,16 +33,14 @@
                     </div>
                 </div>
             </div>
-
             <?php elseif ($textType === 'quote') : ?>
-
             <div class="text__quote">
 
                 <div class="text-block <?php the_sub_field('text_align'); ?>">
                     <div class="text-block__wrapper fmbottom <?php the_sub_field('tb_bg'); ?>">
-                        <h2
+                        <?php if(get_sub_field('title')):?><h2
                             class="<?php the_sub_field('heading_size'); ?> <?php the_sub_field('heading_size'); ?><?php the_sub_field('heading_colour'); ?>">
-                            <?php the_sub_field('title'); ?></h2>
+                            <?php the_sub_field('title'); ?></h2><?php endif; ?>
                         <?php the_sub_field('paragraphs'); ?>
                         <?php
                             $link = get_sub_field('link');
@@ -89,5 +87,4 @@
 
         </div>
     </div>
-
 </section>
