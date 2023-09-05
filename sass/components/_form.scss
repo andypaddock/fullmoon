@@ -18,20 +18,27 @@
   }
 }
 .contact-form {
-  padding: 0 5rem;
+  padding: 0 3rem;
   @media only screen and (min-width: $bp-large) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
+    padding: 0 5rem;
   }
   &--image {
     img {
       width: 100%;
       height: auto;
       aspect-ratio: 1;
+      display: none;
+      @media only screen and (min-width: $bp-large) {
+        display: block;
+      }
     }
   }
   &--shortcode {
-    padding: 0 6rem;
+    @media only screen and (min-width: $bp-large) {
+      padding: 0 6rem;
+    }
   }
 }

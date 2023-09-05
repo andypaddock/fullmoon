@@ -63,7 +63,7 @@ if ($featured_post):
             </a>
 
             <?php elseif ($cardType === 'cardmap') : ?>
-
+<?php  $location = get_sub_field('map');?>
             <div class="boxed-card <?php the_sub_field('box_position');?> <?php the_sub_field('box_align');?>">
 
                 <div class="boxed-card--text">
@@ -72,17 +72,12 @@ if ($featured_post):
                         <?php the_sub_field('box_text'); ?>
                         <?php
                             $link = get_sub_field('box_link');
-                            if ($link) :
-                                $link_url = $link['url'];
-                                $link_title = $link['title'];
-                                $link_target = $link['target'] ? $link['target'] : '_self';
                             ?>
-                        <a class="button" href="<?php echo esc_url($link_url); ?>"
-                            target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-                        <?php endif; ?>
+                        <a class="button" href="https://www.google.com/maps/dir/Current+Location/<?php echo esc_attr($location['lat']); ?>,<?php echo esc_attr($location['lng']); ?>"
+                            target="_blank">Get Directions</a>
                     </div>
                 </div>
-                <div class="boxed-card--image map"><?php  $location = get_sub_field('map');?>
+                <div class="boxed-card--image map">
                     <div id='map'></div>
                     <script>
                     mapboxgl.accessToken =

@@ -13,7 +13,7 @@ get_header();
 <?php $pageImage = get_field('error_bg_image', 'options'); ?>
 
 <section class="container hero-wrapper error-404 anchor-top" style="background-image: url(<?php echo $pageImage; ?>);">
-    <div class="row col-6 error-message">
+    <div class="row col-4 error-message">
         <div class="content">
             <h1 class="heading-404"><?php the_field('error_heading','options');?></h1>
             <h3 class="heading-404 heading-404--sub"><?php the_field('error_sub_heading','options');?></h3>
@@ -25,9 +25,8 @@ if( $link ):
     $link_title = $link['title'];
     $link_target = $link['target'] ? $link['target'] : '_self';
     ?>
-            <a class="button light" href="<?php echo esc_url( $link_url ); ?>"
-                target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><i
-                    class="fa-sharp fa-light fa-arrow-right"></i></a>
+            <a class="button-404" href="<?php echo esc_url( $link_url ); ?>"
+                target="<?php echo esc_attr( $link_target ); ?>"><span><?php echo esc_html( $link_title ); ?></span><?php get_template_part('inc/img/point'); ?></a>
             <?php endif; ?>
         </div>
     </div>

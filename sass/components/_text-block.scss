@@ -64,8 +64,12 @@
       //   width: 40rem;
       // }
       .left {
+        display: none;
         float: left;
         padding: 0;
+        @media only screen and (min-width: $bp-medium) {
+          display: block;
+        }
         img {
           width: 100%;
           height: auto;
@@ -75,14 +79,29 @@
         }
       }
       .right {
+        display: none;
         float: right;
         padding: 0;
+        @media only screen and (min-width: $bp-medium) {
+          display: block;
+        }
         img {
           width: 100%;
           height: auto;
         }
         @media only screen and (min-width: $bp-large) {
           padding: 0 0 1rem 4rem;
+        }
+      }
+      .mobile-image {
+        img {
+          margin: 2rem 0;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        @media only screen and (min-width: $bp-medium) {
+          display: none;
         }
       }
     }
@@ -142,7 +161,9 @@
 }
 article {
   &.double {
-    column-count: 2;
-    column-gap: 2rem;
+    @media only screen and (min-width: $bp-medium) {
+      column-count: 2;
+      column-gap: 2rem;
+    }
   }
 }

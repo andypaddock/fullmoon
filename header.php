@@ -85,15 +85,7 @@
                             'container' => 'main-pages',
                         )); ?>
 
-                        <? wp_nav_menu(array(
-                            'theme_location' => 'conservation',
-                            'container' => 'conservation-pages',
-                        )); ?>
-
-                        <? wp_nav_menu(array(
-                            'theme_location' => 'sub',
-                            'container' => 'sub-pages',
-                        )); ?>
+                      
                     </div>
                 </div>
             </nav>

@@ -1,9 +1,24 @@
 .section-amenity {
-  padding: 2rem 5rem;
-  background: $color-primary-dark;
   color: $color-white;
+  @media only screen and (min-width: $bp-large) {
+    padding: 2rem 5rem;
+  }
+  .row {
+    background: $color-primary-dark;
+    @media only screen and (min-width: $bp-large) {
+      margin: 0 5rem;
+    }
+  }
   .amenity-wrapper {
     list-style: none;
+    text-align: center;
+    li {
+      border-bottom: 1px solid $color-white;
+      padding: 1rem 0;
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
     @media only screen and (min-width: $bp-large) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);

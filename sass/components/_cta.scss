@@ -24,16 +24,91 @@
     &.reduced {
       justify-content: center;
       grid-gap: 3rem;
-      padding: 2rem 4rem 4rem;
-      .heading-2 {
+      padding: 2rem 0;
+      @media only screen and (min-width: $bp-large) {
+        padding: 2rem 4rem 4rem;
+      }
+      h2 {
         font-size: 2.5rem;
         font-style: italic;
+        span {
+          font-style: normal;
+        }
       }
+    }
+    @media only screen and (min-width: $bp-large) {
+      justify-content: space-between;
+    }
+    span {
     }
   }
   .banner-title {
     color: $color-primary;
-    text-align: center;
+
     padding: 4rem 0 0;
+    @media only screen and (min-width: $bp-large) {
+      text-align: center;
+    }
+  }
+}
+.section-newletter-banner {
+  .newsletter-banner-wrapper {
+    position: relative;
+    img {
+      position: absolute;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    .row {
+      z-index: 2;
+      padding: 5rem 3rem;
+      @media only screen and (min-width: $bp-large) {
+        padding: 5rem;
+      }
+    }
+    .heading-2 {
+      display: none;
+      @media only screen and (min-width: $bp-large) {
+        display: block;
+      }
+      &.banner-title {
+        display: block;
+        @media only screen and (min-width: $bp-large) {
+          display: none;
+        }
+      }
+    }
+
+    .newsletter {
+      &--fields {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 2rem;
+        @media only screen and (min-width: $bp-large) {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 2rem;
+        }
+        input {
+          padding: 1.5rem;
+          font-size: 1.6rem;
+          width: 100%;
+        }
+      }
+      &--button {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 2rem 0 0;
+        input[type="submit"] {
+          color: $color-primary;
+          font-family: $font-header;
+          padding: 1rem 3rem;
+          margin: 1.5rem 0;
+        }
+      }
+    }
   }
 }

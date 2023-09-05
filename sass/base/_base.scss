@@ -52,11 +52,11 @@ a {
   z-index: -1;
   width: 100%;
   height: 100%;
-  left: -50vw;
+  left: -30vw;
   opacity: 0.1;
   &.right {
     left: unset;
-    right: -50vw;
+    right: -30vw;
   }
   &.blank {
     top: 5vh;

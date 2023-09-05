@@ -30,7 +30,7 @@
     font-size: 1.5rem;
   }
   .booking-bar {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-color: $color-primary-dark;
@@ -50,6 +50,46 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    @media only screen and (min-width: $bp-large) {
+      display: flex;
+    }
+  }
+  .room-bar {
+    grid-column: full-start / full-end;
+    background-color: $color-primary-dark;
+    color: $color-white;
+    padding: 1rem;
+    &--wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    &--summary {
+      display: flex;
+      align-items: flex-start;
+      grid-gap: 1rem;
+      font-size: 1.6rem;
+      flex-direction: column;
+      i {
+        padding-right: 1rem;
+      }
+      @media only screen and (min-width: $bp-large) {
+        flex-direction: row;
+        align-items: center;
+        grid-gap: 4rem;
+      }
+    }
+    &--price {
+      border-left: 2px solid $color-primary-dark-2;
+      padding-left: 2rem;
+      @media only screen and (min-width: $bp-large) {
+        padding-left: 8rem;
+      }
+      .price {
+        font-size: 2.5rem;
+      }
+      .basis {
+      }
     }
   }
 }
@@ -99,21 +139,33 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        text-align: center;
+        padding: 0 3rem;
         color: $color-white;
+
+        @media only screen and (min-width: $bp-small) {
+          text-align: left;
+          padding: 0 20vw 0 3rem;
+        }
 
         @media only screen and (min-width: $bp-large) {
           padding: 0 5rem;
+          text-align: center;
         }
+
         .heading-1 {
           font-size: 3rem;
-          @media only screen and (min-width: $bp-large) {
+          @media only screen and (min-width: $bp-small) {
             font-size: 6rem;
           }
         }
+        .hero-para {
+          padding: 2rem 0 0;
+        }
         p {
+          font-size: 1.6rem;
           &:first-of-type {
             font-style: italic;
+            font-size: 1.8rem;
           }
         }
         .booking-buttons {

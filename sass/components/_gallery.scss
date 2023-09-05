@@ -95,6 +95,10 @@
 }
 .section-gallery {
   .quad {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+
     @media only screen and (min-width: $bp-large) {
       display: grid;
       grid-gap: 2rem;
@@ -104,6 +108,9 @@
     &--image {
       img {
         width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: cover;
       }
       @media only screen and (min-width: $bp-large) {
         img {
@@ -125,6 +132,7 @@
     &--image {
       img {
         width: 100%;
+        height: auto;
       }
       @media only screen and (min-width: $bp-large) {
         img {

@@ -104,6 +104,8 @@
 <?php get_template_part('template-parts/amenities'); ?>
 <?php elseif (get_row_layout() == 'local') : ?>
 <?php get_template_part('template-parts/local'); ?>
+<?php elseif (get_row_layout() == 'newsletter') : ?>
+<?php get_template_part('template-parts/newsletter'); ?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

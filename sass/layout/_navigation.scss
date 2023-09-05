@@ -93,7 +93,7 @@ a {
         content: "";
         width: 2.4rem;
         height: 0.2rem;
-        background: $color-primary;
+        background: $color-white;
         position: absolute;
         left: 0;
         transition: all 0.3s;
@@ -129,7 +129,7 @@ a {
 
   .menu-container {
     width: 0%;
-    height: 100%;
+    height: calc(100% - 8rem);
     position: fixed;
     display: flex;
     align-items: center;
@@ -304,7 +304,7 @@ a {
     list-style: none;
     display: flex;
     justify-content: center;
-    grid-gap: 5rem;
+    grid-gap: 2rem;
     li {
       font-family: $font-header;
       font-size: 1.6rem;
@@ -325,6 +325,7 @@ a {
   width: 100%;
   display: block;
   background: $color-primary-dark;
+  transition: all 0.5s cubic-bezier(0.99, 0.04, 0.87, 1) 0.3s;
   @media only screen and (min-width: $bp-large) {
     display: none;
   }
@@ -335,6 +336,20 @@ a {
       margin: 1rem 0;
       color: $color-white;
       border-color: $color-white;
+      padding: 1rem 1.5rem 0.5rem 1.5rem;
+      transition: all 0.5s cubic-bezier(0.99, 0.04, 0.87, 1) 0.3s;
+    }
+  }
+}
+.menu-open {
+  .mobile-nav {
+    background: $color-white;
+  }
+  .booking-buttons {
+    .button {
+      margin: 2rem 0;
+      color: $color-primary-dark;
+      border-color: $color-primary;
       padding: 1rem 1.5rem 0.5rem 1.5rem;
     }
   }

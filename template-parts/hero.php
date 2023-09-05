@@ -63,6 +63,17 @@ $pageElements = get_field('page_element_headings', 'options');
            
         </div>
         <?php }?>
+        <?php if(get_sub_field('add_room_summary')) {?>
+        <div class="room-bar container">
+            <div class="row room-bar--wrapper col-8">
+            <div class="room-bar--summary"><div class="sleeps"><i class="fa-duotone fa-user"></i><?php the_sub_field('sleeps');?></div><div class="beds"><i class="fa-duotone fa-bed-empty"></i><?php the_sub_field('beds');?></div><div class="bath"><i class="fa-duotone fa-bath"></i><?php the_sub_field('bath');?></div></div>
+            <div class="room-bar--price">
+                <div class="price"><?php the_sub_field('price');?></div>
+                <div class="basis"><?php the_sub_field('price_basis');?></div>
+            </div>
+           </div>
+        </div>
+        <?php }?>
     </section>
     <?php if ( is_single() ) { ?>
     <section class="container news-meta">
