@@ -102,7 +102,7 @@ footer {
   background: white;
 }
 .footer-accordian {
-  padding: 5rem 3rem;
+  padding: 5rem 2rem;
   @media only screen and (min-width: $bp-large) {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -115,9 +115,13 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 0;
-    border-bottom: 1px solid $color-white;
+    padding: 2rem;
+    border: 1px solid $color-white;
     cursor: pointer;
+    @media only screen and (min-width: $bp-large) {
+      border: none;
+      border-bottom: 1px solid $color-white;
+    }
 
     i {
       transition: 0.5s all ease;

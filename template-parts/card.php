@@ -48,7 +48,10 @@ if ($featured_post):
                             <h2 class="heading-2 heading-2--light"><?php echo esc_html($featured_post->post_title); ?>
                             </h2>
                             <?php the_sub_field('large_link_description'); ?>
+                            <div class="pointer">
+                                <?php the_sub_field('point_text'); ?>
                             <?php get_template_part('inc/img/point'); ?>
+                            </div>
                         </div>
                     </div>
                     <?php
@@ -148,7 +151,10 @@ if( $link ):
                         <div class="link-text">
                             <h2 class="heading-2 heading-2--light"><?php the_sub_field('custom_link_title'); ?></h2>
 
+                            <div class="pointer">
+                                <div><?php the_sub_field('point_text'); ?></div>
                             <?php get_template_part('inc/img/point'); ?>
+                            </div>
 
 
 

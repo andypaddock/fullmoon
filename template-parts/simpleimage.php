@@ -8,27 +8,42 @@ $imageLayout = get_sub_field('display_selector');
 if ($images) : ?>
         <?php if ($imageLayout == 'double'):?>
         <div class="outer-container double">
-            <?php foreach ($images as $image_id) :
-                $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', TRUE); ?>
-            <div class="double--image">
-                <a data-fslightbox="gallery" href="<?php echo wp_get_attachment_image_url($image_id, $original); ?>"
-                    class="lightbox-gallery" alt="<?php echo $image_alt; ?>">
-                    <?php echo wp_get_attachment_image($image_id, $size); ?></a>
-            </div>
-            <?php endforeach; ?>
+    <?php 
+    $counter = 0; // Initialize a counter variable
+    foreach ($images as $image_id) :
+        if ($counter >= 2) {
+            break; // Exit the loop when 2 items have been displayed
+        }
+        $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', TRUE); ?>
+        <div class="double--image">
+            <a data-fslightbox="gallery" href="<?php echo wp_get_attachment_image_url($image_id, $original); ?>"
+                class="lightbox-gallery" alt="<?php echo $image_alt; ?>">
+                <?php echo wp_get_attachment_image($image_id, $size); ?></a>
         </div>
+        <?php 
+        $counter++; // Increment the counter variable
+    endforeach; ?>
+</div>
 
         <?php elseif ($imageLayout == 'quad'):?>
         <div class="outer-container quad">
-            <?php foreach ($images as $image_id) :
-                $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', TRUE); ?>
-            <div class="quad--image">
-                <a data-fslightbox="gallery" href="<?php echo wp_get_attachment_image_url($image_id, $original); ?>"
-                    class="lightbox-gallery" alt="<?php echo $image_alt; ?>">
-                    <?php echo wp_get_attachment_image($image_id, $size); ?></a>
-            </div>
-            <?php endforeach; ?>
+    <?php 
+    $counter = 0; // Initialize a counter variable
+    foreach ($images as $image_id) :
+        if ($counter >= 4) {
+            break; // Exit the loop when 4 items have been displayed
+        }
+        $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', TRUE); ?>
+        <div class="quad--image">
+            <a data-fslightbox="gallery" href="<?php echo wp_get_attachment_image_url($image_id, $original); ?>"
+                class="lightbox-gallery" alt="<?php echo $image_alt; ?>">
+                <?php echo wp_get_attachment_image($image_id, $size); ?></a>
         </div>
+        <?php 
+        $counter++; // Increment the counter variable
+    endforeach; ?>
+</div>
+
 
 
 

@@ -79,7 +79,10 @@ section {
       padding: 3rem;
     }
     &.medium {
-      padding: 5rem;
+      padding: 2.5rem;
+      @media only screen and (min-width: $bp-large) {
+        padding: 5rem;
+      }
     }
     &.large {
       padding: 8rem;

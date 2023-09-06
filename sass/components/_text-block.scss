@@ -153,7 +153,9 @@
 }
 .breadcrumb {
   text-align: center;
-  padding: 5rem 0 10rem;
+  @media only screen and (min-width: $bp-medium) {
+    padding: 5rem 0 10rem;
+  }
 
   .current {
     color: $color-primary;

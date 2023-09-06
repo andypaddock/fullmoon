@@ -486,19 +486,22 @@ activityTriggers.forEach(function (trigger) {
 //   });
 // });
 document.addEventListener("DOMContentLoaded", function () {
+  // Check if the target element with the id "scroll-down-arrow" exists on the page
   const scrollDownArrow = document.getElementById("scroll-down-arrow");
 
-  // Add a click event listener to the arrow element
-  scrollDownArrow.addEventListener("click", function () {
-    // Calculate the target scroll position as 100vh from the top
-    const targetScrollPosition = window.innerHeight;
+  if (scrollDownArrow) {
+    // Add a click event listener to the arrow element
+    scrollDownArrow.addEventListener("click", function () {
+      // Calculate the target scroll position as 100vh from the top
+      const targetScrollPosition = window.innerHeight;
 
-    // Smoothly scroll to the target position
-    window.scrollTo({
-      top: targetScrollPosition,
-      behavior: "smooth",
+      // Smoothly scroll to the target position
+      window.scrollTo({
+        top: targetScrollPosition,
+        behavior: "smooth",
+      });
     });
-  });
+  }
 });
 
 refreshFsLightbox();
