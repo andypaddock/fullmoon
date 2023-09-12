@@ -46,7 +46,7 @@ header {
   }
   .booking-buttons {
     display: none;
-    @media only screen and (min-width: $bp-large) {
+    @media only screen and (min-width: $bp-largest) {
       display: flex;
       grid-gap: 2rem;
     }
@@ -56,5 +56,6 @@ header {
     color: $color-white;
     border-color: $color-primary;
     line-height: 1;
+    padding: 1.5rem 1rem;
   }
 }
